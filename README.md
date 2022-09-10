@@ -76,6 +76,7 @@ If SingleService.pendingRequests is not empty and while all thread died without 
 2. R.w(isEmpty = F) -> R.r(isWorking) = F -> R.CAS(isWorking) = F -> give up
 
 Precondition: isWorking = T
+
 3. W'.w(isEmpty = T) -> W.r(isEmpty) = T -> W.w(isWorking = F) -> W.r(isEmpty) = T -> giveup
 4. W'.w(isEmpty = T) -> W.r(isEmpty) = T -> W.w(isWorking = F) -> W.r(isEmpty) = F -> W.CAS(isWorking) = F -> giveup
 5. W'.w(isEmpty = T) -> W.r(isEmpty) = T -> W.w(isWorking = F) -> W.r(isEmpty) = F -> W.CAS(isWorking) = T -> W.r(isEmpty) = T -> giveup
